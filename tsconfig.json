@@ -3,7 +3,16 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "config": ["config"]
+      "config": ["config"],
+      "abis": ["src/abis"],
+      "assets": ["src/assets"],
+      "components": ["src/components"],
+      "constants": ["src/constants"],
+      "hooks": ["src/hooks"],
+      "lib": ["src/lib"],
+      "pages": ["src/pages"],
+      "state": ["src/state"],
+      "utils": ["src/utils"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
