@@ -1,13 +1,10 @@
-import { Switch } from "@mantine/core";
-import type { NextPage } from "next";
+import { Title } from "@mantine/core";
 import Layout from "src/components/layout/Index";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Layout pageTitle="Home">
-      <h1>Basic app skeleton: DONE!</h1>
+      <Title>Basic app skeleton: DONE!</Title>
     </Layout>
   );
-};
-
-export default Home;
+}

@@ -25,7 +25,7 @@ export default function Layout({
       </Head>
       <AppShell
         fixed
-        padding="md"
+        padding="lg"
         navbarOffsetBreakpoint="sm"
         navbar={<Navbar hidden={!showNav} />}
         header={<Header showNavbar={showNav} setShowNavbar={setShowNav} />}
