@@ -1,4 +1,5 @@
 import { MantineTheme } from "@mantine/core";
+import catppuccin from "./catppuccin";
 
 const globalStyles = (theme: MantineTheme) => {
   const isDark = theme.colorScheme === "dark";
@@ -7,9 +8,8 @@ const globalStyles = (theme: MantineTheme) => {
     body: {
       ...theme.fn.fontStyles(),
 
-      backgroundColor: isDark ? theme.colors.ctp_crust[7] : theme.white,
-      color: isDark ? theme.colors.dark[0] : theme.black,
-      lineHeight: theme.lineHeight,
+      backgroundColor: isDark ? catppuccin.mocha.base : theme.white,
+      color: isDark ? catppuccin.mocha.text : theme.black,
     },
   };
 };

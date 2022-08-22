@@ -5,9 +5,12 @@ import {
   MediaQuery,
   Group,
   Title,
+  Box,
 } from "@mantine/core";
+import { Activity } from "phosphor-react";
 import config from "config";
 import ConnectButton from "src/components/wallet/connectButton";
+import catppuccin from "src/lib/catppuccin";
 
 export default function Header({
   showNavbar,
@@ -18,7 +21,7 @@ export default function Header({
 }) {
   return (
     <MantineHeader
-      sx={(theme) => ({ backgroundColor: theme.colors.ctp_crust[6] })}
+      sx={{ backgroundColor: catppuccin.mocha.crust }}
       height={100}
       p="lg"
     >
@@ -36,9 +39,12 @@ export default function Header({
           </MediaQuery>
 
           <Link href="/">
-            <Title order={2} sx={() => ({ cursor: "pointer" })}>
-              {config.appName}
-            </Title>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <Activity size={32} />
+              <Title order={2} sx={() => ({ cursor: "pointer" })}>
+                {config.appName}
+              </Title>
+            </Box>
           </Link>
         </Group>
 
