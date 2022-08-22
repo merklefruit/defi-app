@@ -1,5 +1,5 @@
 import { Title } from "@mantine/core";
-import Layout from "src/components/layout/Index";
+import Layout from "src/components/layout";
 
 export default function Settings() {
   return (

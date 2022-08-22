@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import { AppShell } from "@mantine/core";
 import Head from "next/head";
-import Header from "src/components/layout/Header";
-import Navbar from "src/components/layout/Navbar";
+import Header from "src/components/layout/header";
+import Navbar from "src/components/layout/navbar";
 import config from "config";
 
-export default function Layout({
-  pageTitle,
-  children,
-}: {
-  pageTitle: string;
-  children: React.ReactNode;
-}) {
+type IProps = { pageTitle?: string; children: React.ReactNode };
+
+export default function Layout({ pageTitle, children }: IProps) {
   const [initialLoad, setInitialLoad] = useState(false);
   const [showNav, setShowNav] = useState(false);
 

@@ -11,6 +11,7 @@ import { Wallet, Strategy, Sliders } from "phosphor-react";
 export default function Navbar({ hidden }: { hidden: boolean }) {
   return (
     <MantineNavbar
+      sx={(theme) => ({ backgroundColor: theme.colors.ctp_crust[6] })}
       hidden={hidden}
       hiddenBreakpoint="sm"
       width={{ base: "100%", sm: 300 }}

@@ -7,7 +7,7 @@ import {
   Title,
 } from "@mantine/core";
 import config from "config";
-import ConnectButton from "src/components/wallet/ConnectButton";
+import ConnectButton from "src/components/wallet/connectButton";
 
 export default function Header({
   showNavbar,
@@ -17,7 +17,11 @@ export default function Header({
   setShowNavbar: (showNavbar: boolean) => void;
 }) {
   return (
-    <MantineHeader height={100} p="lg">
+    <MantineHeader
+      sx={(theme) => ({ backgroundColor: theme.colors.ctp_crust[6] })}
+      height={100}
+      p="lg"
+    >
       <Group
         align="center"
         style={{ justifyContent: "space-between", height: "100%" }}
@@ -32,7 +36,7 @@ export default function Header({
           </MediaQuery>
 
           <Link href="/">
-            <Title order={3} style={{ cursor: "pointer" }}>
+            <Title order={2} sx={() => ({ cursor: "pointer" })}>
               {config.appName}
             </Title>
           </Link>
