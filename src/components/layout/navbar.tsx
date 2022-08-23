@@ -1,16 +1,14 @@
 import Link from "next/link";
-import {
-  Button,
-  Group,
-  Navbar as MantineNavbar,
-  Stack,
-  Text,
-} from "@mantine/core";
+import { Button, Navbar as MantineNavbar, Stack, Text } from "@mantine/core";
 import { Wallet, Strategy, Sliders } from "phosphor-react";
+import catppuccin from "src/lib/catppuccin";
 
-export default function Navbar({ hidden }: { hidden: boolean }) {
+type IProps = { hidden: boolean };
+
+export default function Navbar({ hidden }: IProps) {
   return (
     <MantineNavbar
+      sx={{ backgroundColor: catppuccin.mocha.crust }}
       hidden={hidden}
       hiddenBreakpoint="sm"
       width={{ base: "100%", sm: 300 }}
@@ -39,23 +37,24 @@ export default function Navbar({ hidden }: { hidden: boolean }) {
   );
 }
 
-function NavbarItem({
-  link,
-  icon,
-  text,
-}: {
-  link: string;
-  icon: any;
-  text: string;
-}) {
+type INavItemProps = { link: string; icon: React.ReactNode; text: string };
+
+function NavbarItem({ link, icon, text }: INavItemProps) {
   return (
     <Link href={link}>
       <Button
         component="a"
-        variant="light"
-        color="gray"
-        size="lg"
+        size="md"
         leftIcon={icon}
+        sx={{
+          backgroundColor: catppuccin.mocha.overlay0,
+          color: catppuccin.mocha.text,
+          border: "none",
+
+          "&:hover": {
+            backgroundColor: catppuccin.mocha.overlay1,
+          },
+        }}
       >
         <Text>{text}</Text>
       </Button>

@@ -1,13 +1,16 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 
-import { MantineProvider } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
+import { Global, MantineProvider } from "@mantine/core";
 import { Provider } from "react-redux";
 import { WagmiConfig } from "wagmi";
-import Wallet from "src/components/wallet/Index";
+
+import Wallet from "src/components/wallet/index";
+import theme from "src/lib/theme";
 import store from "state";
 import config from "config";
+import globalStyles from "src/lib/globalStyles";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -22,15 +25,12 @@ export default function App(props: AppProps) {
         />
       </Head>
 
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{ colorScheme: "dark" }}
-      >
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme}>
         <NotificationsProvider>
           <Provider store={store}>
             <WagmiConfig client={Wallet.wagmiClient}>
               <Wallet.Provider>
+                <Global styles={(theme) => globalStyles(theme)} />
                 <Component {...pageProps} />
               </Wallet.Provider>
             </WagmiConfig>
