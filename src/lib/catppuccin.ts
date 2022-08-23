@@ -31,6 +31,6 @@ const catppuccin = {
     flamingo: "#f2cdcd",
     rosewater: "#f5e0dc",
   },
-};
+}
 
-export default catppuccin;
+export default catppuccin
