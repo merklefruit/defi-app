@@ -6,7 +6,7 @@ import { Global, MantineProvider } from "@mantine/core";
 import { Provider } from "react-redux";
 import { WagmiConfig } from "wagmi";
 
-import Wallet from "src/components/wallet";
+import Wallet from "src/components/wallet/index";
 import theme from "src/lib/theme";
 import store from "state";
 import config from "config";
