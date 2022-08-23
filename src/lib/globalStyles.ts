@@ -1,8 +1,8 @@
-import { MantineTheme } from "@mantine/core";
-import catppuccin from "./catppuccin";
+import { MantineTheme } from "@mantine/core"
+import catppuccin from "./catppuccin"
 
 const globalStyles = (theme: MantineTheme) => {
-  const isDark = theme.colorScheme === "dark";
+  const isDark = theme.colorScheme === "dark"
 
   return {
     body: {
@@ -11,7 +11,7 @@ const globalStyles = (theme: MantineTheme) => {
       backgroundColor: isDark ? catppuccin.mocha.base : theme.white,
       color: isDark ? catppuccin.mocha.text : theme.black,
     },
-  };
-};
+  }
+}
 
-export default globalStyles;
+export default globalStyles

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { Button, Navbar as MantineNavbar, Stack, Text } from "@mantine/core";
-import { Wallet, Strategy, Sliders } from "phosphor-react";
-import catppuccin from "src/lib/catppuccin";
+import Link from "next/link"
+import { Button, Navbar as MantineNavbar, Stack, Text } from "@mantine/core"
+import { Wallet, Strategy, Sliders } from "phosphor-react"
+import catppuccin from "src/lib/catppuccin"
 
-type IProps = { hidden: boolean };
+type IProps = { hidden: boolean }
 
 export default function Navbar({ hidden }: IProps) {
   return (
@@ -15,29 +15,17 @@ export default function Navbar({ hidden }: IProps) {
       p="lg"
     >
       <Stack>
-        <NavbarItem
-          link="/"
-          icon={<Wallet weight="light" size={27} />}
-          text="Portfolio"
-        />
+        <NavbarItem link="/" icon={<Wallet weight="light" size={27} />} text="Portfolio" />
 
-        <NavbarItem
-          link="/strategies"
-          icon={<Strategy weight="light" size={27} />}
-          text="Strategies"
-        />
+        <NavbarItem link="/strategies" icon={<Strategy weight="light" size={27} />} text="Strategies" />
 
-        <NavbarItem
-          link="/settings"
-          icon={<Sliders weight="light" size={27} />}
-          text="Settings"
-        />
+        <NavbarItem link="/settings" icon={<Sliders weight="light" size={27} />} text="Settings" />
       </Stack>
     </MantineNavbar>
-  );
+  )
 }
 
-type INavItemProps = { link: string; icon: React.ReactNode; text: string };
+type INavItemProps = { link: string; icon: React.ReactNode; text: string }
 
 function NavbarItem({ link, icon, text }: INavItemProps) {
   return (
@@ -59,5 +47,5 @@ function NavbarItem({ link, icon, text }: INavItemProps) {
         <Text>{text}</Text>
       </Button>
     </Link>
-  );
+  )
 }
